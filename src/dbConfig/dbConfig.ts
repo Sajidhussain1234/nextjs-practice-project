@@ -7,8 +7,8 @@ export function connectToDB() {
     connection.on("connected", () => {
       console.log("connected to mongoDB successfully");
     });
-    connection.on("error", (err) => {
-      console.log("error connecting to mongoDB", err);
+    connection.on("error", (error) => {
+      console.log("error connecting to mongoDB", error);
     });
     process.exit();
   } catch (error) {
