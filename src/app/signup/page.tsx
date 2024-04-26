@@ -78,7 +78,7 @@ const SignUp = () => {
             href="/login"
             className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
           >
-            Already have an account? Sign in
+            Already have an account? Login
           </Link>
         </div>
       </div>
