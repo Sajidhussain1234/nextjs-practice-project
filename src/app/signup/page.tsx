@@ -66,7 +66,7 @@ const SignUp = () => {
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-between">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
@@ -78,7 +78,7 @@ const SignUp = () => {
             href="/login"
             className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
           >
-            Already have an account? Sign in
+            Already have an account? Login
           </Link>
         </div>
       </div>
