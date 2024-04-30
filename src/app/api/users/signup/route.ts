@@ -1,13 +1,14 @@
-import { connectToDB } from "@/dbConfig/dbConfig";
+import connectToDB from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 
 connectToDB();
 
-export default async function POST(req: NextRequest) {
+export async function POST(req: NextRequest) {
+  console.log("oh ho ja call", req);
   try {
-    const body = req.body;
+    const body: any = req.body;
     console.log(body);
     const { name, email, password } = body;
     // Check if user exists
