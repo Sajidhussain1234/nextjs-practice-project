@@ -7,7 +7,7 @@ connectToDB();
 
 export async function POST(req: NextRequest) {
   try {
-    const body: any = await req.json();
+    const body: any = req.json();
     const { name, email, password } = body;
     // Check if user exists
     const user = await User.findOne({ email });
@@ -30,8 +30,8 @@ export async function POST(req: NextRequest) {
     });
 
     const savedUser = await newUser.save();
-    console.log(savedUser);
 
+    console.log(savedUser);
     return NextResponse.json({
       message: "User created successfully",
       success: true,
