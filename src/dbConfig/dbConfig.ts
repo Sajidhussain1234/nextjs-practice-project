@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 async function connectToDB() {
   try {
     // Ensure MONGO_URI environment variable is set
-    if (!process.env.MONGO_URI) {
+    if (!process.env.MONGO_URI!) {
       throw new Error(
         "Missing MONGO_URI environment variable. Please set it before connecting to MongoDB."
       );
