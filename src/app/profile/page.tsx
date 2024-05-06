@@ -9,12 +9,13 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
+  const user = localStorage.getItem("LoggedInUser");
+  console.log("logi User", user);
+
   const onLogout = async () => {
     try {
       setLoading(true);
-      console.log("logout clicked");
       const response = await axios.post("/api/users/logout");
-      console.log("response", response);
       toast.success(response.data.message);
       router.push("/login");
       setLoading(false);
@@ -38,13 +39,14 @@ export default function ProfilePage() {
       <div className="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
         <img
           className="object-cover object-center h-32"
-          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+          src="https://images.unsplash.com/photo-1680725779155-456faadefa26"
+          // src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
           alt="Woman looking front"
         ></img>
       </div>
       <div className="text-center mt-2">
-        <h2 className="font-semibold">Sarah Smith</h2>
-        <p className="text-gray-500">Freelance Web Designer</p>
+        <h2 className="font-semibold">{user?.toUpperCase()}</h2>
+        <p className="text-gray-500">Software Engineer</p>
       </div>
       <ul className="py-4 mt-2 text-gray-700 flex items-center justify-around">
         <li className="flex flex-col items-center justify-around">
