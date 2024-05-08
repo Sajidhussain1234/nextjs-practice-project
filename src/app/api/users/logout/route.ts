@@ -8,7 +8,10 @@ export async function POST() {
       success: true,
     });
     // set cookies empty on logout
-    response.cookies.set("token", "", { httpOnly: true, expires: new Date(0) });
+    response.cookies.set("authToken", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
     // return response
     return response;
   } catch (error: any) {

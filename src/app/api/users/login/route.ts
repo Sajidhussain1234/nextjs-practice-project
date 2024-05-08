@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     };
 
     // create token
-    const token = jwt.sign(tokenData, process.env.SECRET_KEY!, {
+    const authToken = jwt.sign(tokenData, process.env.SECRET_KEY!, {
       expiresIn: "1d",
     });
     // prepared response
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
     });
 
     // set cookie
-    response.cookies.set("token", token, {
+    response.cookies.set("authToken", authToken, {
       httpOnly: true,
     });
     // return response
