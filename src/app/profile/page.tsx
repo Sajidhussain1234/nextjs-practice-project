@@ -6,17 +6,16 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ProfilePage() {
+  const userName = localStorage.getItem("LoggedInUser");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
-  const user = localStorage.getItem("LoggedInUser");
-  console.log("logi User", user);
 
   const onLogout = async () => {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/logout");
       toast.success(response.data.message);
+      localStorage.removeItem("LoggedInUser");
       router.push("/login");
       setLoading(false);
     } catch (error: any) {
@@ -40,12 +39,11 @@ export default function ProfilePage() {
         <img
           className="object-cover object-center h-32"
           src="https://images.unsplash.com/photo-1680725779155-456faadefa26"
-          // src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
           alt="Woman looking front"
         ></img>
       </div>
       <div className="text-center mt-2">
-        <h2 className="font-semibold">{user?.toUpperCase()}</h2>
+        <h2 className="font-semibold">{userName?.toUpperCase()}</h2>
         <p className="text-gray-500">Software Engineer</p>
       </div>
       <ul className="py-4 mt-2 text-gray-700 flex items-center justify-around">

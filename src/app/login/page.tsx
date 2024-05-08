@@ -17,12 +17,12 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/login", user);
-      console.log(response.data.loggedInUser);
-      localStorage.setItem("LoggedInUser", response.data.loggedInUser.name);
+      // console.log(response.data.loggedInUser);
+      localStorage.setItem("LoggedInUser", response.data.loggedInUser?.name);
       toast.success(response.data.message);
       router.push("/profile");
     } catch (error: any) {
-      // console.log("Login failed", error);
+      console.log("Login failed", error);
       toast.error(error.response.data.error);
     } finally {
       setLoading(false);
