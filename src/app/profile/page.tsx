@@ -2,11 +2,14 @@
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ProfilePage() {
-  const userName = localStorage.getItem("LoggedInUser");
+  const [loggedInUser, setLoggedInUser] = useState({
+    name: "DemoName",
+    email: "demo@gmail.com",
+  });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -15,7 +18,6 @@ export default function ProfilePage() {
       setLoading(true);
       const response = await axios.post("/api/users/logout");
       toast.success(response.data.message);
-      localStorage.removeItem("LoggedInUser");
       router.push("/login");
       setLoading(false);
     } catch (error: any) {
@@ -26,6 +28,16 @@ export default function ProfilePage() {
       setLoading(false);
     }
   };
+  const getLoggedInUserDetail = async () => {
+    const response = await axios.get("/api/users/me");
+    console.log("res", response.data);
+    setLoggedInUser(response.data.data);
+  };
+
+  useEffect(() => {
+    getLoggedInUserDetail();
+  }, []);
+
   return (
     <div className="max-w-2xl mx-4 my-16 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900">
       <div className="rounded-t-lg h-32 overflow-hidden">
@@ -43,9 +55,10 @@ export default function ProfilePage() {
         ></img>
       </div>
       <div className="text-center mt-2">
-        <h2 className="font-semibold">{userName?.toUpperCase()}</h2>
-        <p className="text-gray-500">Software Engineer</p>
+        <h2 className="font-semibold">{loggedInUser?.name?.toUpperCase()}</h2>
+        <h2 className="font-semibold">{loggedInUser?.email}</h2>
       </div>
+
       <ul className="py-4 mt-2 text-gray-700 flex items-center justify-around">
         <li className="flex flex-col items-center justify-around">
           <svg
