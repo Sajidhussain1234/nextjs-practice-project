@@ -9,7 +9,7 @@ async function connectToDB() {
       );
     }
 
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI!);
 
     console.log("Connected to MongoDB successfully.");
   } catch (error: any) {
