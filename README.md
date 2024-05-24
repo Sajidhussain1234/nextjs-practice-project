@@ -14,9 +14,15 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## TASK DONE
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Following Practices made:
+Setup SignUp, Login Functionality
+Added Authentication for private route
+For streamline routing by adding middleware
+Public routes only can be access without authToken, If user want to access private route, he must have authToken
+
+Also understand the app routing through this practice project.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 

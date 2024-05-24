@@ -8,7 +8,7 @@ export const getDataFromToken = (req: NextRequest) => {
       encodedToken,
       process.env.JWT_SECRET_KEY!
     );
-    console.log("Decoded Tokennnn", decodedToken);
+    // console.log("Decoded Token", decodedToken);
     return decodedToken?.id;
   } catch (error: any) {
     throw new Error(error.message);
