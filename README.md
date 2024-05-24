@@ -16,10 +16,11 @@ bun dev
 
 ## TASK DONE
 
-In this app I setup SignUp, Login Functionality, also set authentication for private route.
-For streamline routing by adding middleware.
-public routes only can be access without authToken,
-If user want to access public route, he must have authToken.
+Following Practices made:
+Setup SignUp, Login Functionality
+Added Authentication for private route
+For streamline routing by adding middleware
+Public routes only can be access without authToken, If user want to access private route, he must have authToken
 
 Also understand the app routing through this practice project.
 
