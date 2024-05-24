@@ -19,13 +19,14 @@ bun dev
 Following Practices made:
 Setup SignUp, Login Functionality
 ![image](https://github.com/Sajidhussain1234/nextjs-practice-project/assets/90509117/1af74d29-61a3-461e-b95a-b663177b008a) ![image](https://github.com/Sajidhussain1234/nextjs-practice-project/assets/90509117/e0e29ac1-e125-4d9a-b212-cdfa8dee93a5) 
+
 Added Authentication for private route
-![Uploading image.png…]()
+![image](https://github.com/Sajidhussain1234/nextjs-practice-project/assets/90509117/62bd4ee3-d94f-42cc-9814-ada6a74a85b1)
 
 For streamline routing by adding middleware
-Public routes only can be access without authToken, If user want to access private route, he must have authToken
+Public routes can only be accessed without authToken, If a user wants to access a private route, he must have authToken
 
-Also understand the app routing through this practice project.
+Also, understand the app routing through this practice project.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
