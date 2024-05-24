@@ -14,6 +14,13 @@ pnpm dev
 bun dev
 ```
 
+In this ap I setup SignUp, Login Functionality, aslo set authentication for private route.
+For streamline routing use middleware.
+public routes only can be access without authToken,
+If user want to access public route, he must have authToken.
+
+Also understand the app routing through this practice project.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
