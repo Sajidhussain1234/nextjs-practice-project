@@ -18,7 +18,10 @@ bun dev
 
 Following Practices made:
 Setup SignUp, Login Functionality
+![image](https://github.com/Sajidhussain1234/nextjs-practice-project/assets/90509117/1af74d29-61a3-461e-b95a-b663177b008a) ![image](https://github.com/Sajidhussain1234/nextjs-practice-project/assets/90509117/e0e29ac1-e125-4d9a-b212-cdfa8dee93a5) 
 Added Authentication for private route
+![Uploading image.png…]()
+
 For streamline routing by adding middleware
 Public routes only can be access without authToken, If user want to access private route, he must have authToken
 
